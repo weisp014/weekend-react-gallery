@@ -17,13 +17,14 @@ function GalleryItem({id, path, description, likes, getGallery}) {
             });
     }
 
+    // toggle between image and description when clicked
     const toggleDescription = () => {
         setToggle(!toggle);
     }
 
     const checkIfLikes = () => {
         if(likes === 0) {
-            return <p>"No people love this"</p>
+            return <p>No people love this :(</p>
         }
         else {
             return <p>{likes} people love this!</p>
@@ -41,8 +42,7 @@ function GalleryItem({id, path, description, likes, getGallery}) {
                 }
             </div>
             <button onClick={() => likedImage(id)}>love it!</button> 
-            { checkIfLikes() } 
-            {/* <p>{likes} people love this!</p> */}
+            { checkIfLikes() }
         </div>
     )
 }
