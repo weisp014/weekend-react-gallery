@@ -1,6 +1,6 @@
 import GalleryItem from "../GalleryItem/GalleryItem";
 
-function GalleryList({allImages}) {
+function GalleryList({allImages, getGallery}) {
 
 
     return(
@@ -12,10 +12,10 @@ function GalleryList({allImages}) {
                     path={image.path} 
                     description={image.description}
                     likes={image.likes}
+                    getGallery={getGallery}
                     />
             ))}
         </div>
-        // <GalleryItem />
     )
 }
 
