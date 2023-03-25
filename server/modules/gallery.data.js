@@ -1,3 +1,5 @@
+//! Database has replaced this file...
+
 const galleryItems = [
     { id: 1, path: 'images/image1.jpg', description: 'Photo of a goat taken at Glacier National Park.', likes: 0 },
     { id: 2, path: 'images/image2.jpg', description: 'The sound of music.', likes: 0 },
