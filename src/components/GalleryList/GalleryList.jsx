@@ -4,7 +4,7 @@ function GalleryList({allImages, getGallery}) {
 
 
     return(
-        <div>
+        <div className="images">
             {allImages.map((image) => (
                 
                     <GalleryItem key={image.id}

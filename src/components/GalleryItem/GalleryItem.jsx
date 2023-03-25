@@ -17,18 +17,32 @@ function GalleryItem({id, path, description, likes, getGallery}) {
             });
     }
 
+    const toggleDescription = () => {
+        setToggle(!toggle);
+    }
+
+    const checkIfLikes = () => {
+        if(likes === 0) {
+            return <p>"No people love this"</p>
+        }
+        else {
+            return <p>{likes} people love this!</p>
+        }
+    }
+
     return(
         <div>
             {/* Show description if toggle true */}
             <div>
                 {
                 toggle ?
-                <p>{description}</p>:
-                <img src={path}></img>        
+                <p className='description' onClick={toggleDescription}>{description}</p>:
+                <p><img onClick={toggleDescription} src={path}></img></p>       
                 }
             </div>
-            <button onClick={() => likedImage(id)}>love it!</button>  
-            <p>{likes} people love this!</p>
+            <button onClick={() => likedImage(id)}>love it!</button> 
+            { checkIfLikes() } 
+            {/* <p>{likes} people love this!</p> */}
         </div>
     )
 }
