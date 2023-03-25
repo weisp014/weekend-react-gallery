@@ -17,6 +17,18 @@ function GalleryItem({id, path, description, likes, getGallery}) {
             });
     }
 
+    // DELETE
+    const deleteImage = (id) => {
+        console.log('in delete');
+        axios.delete(`/gallery/${id}`)
+            .then((response) => {
+                getGallery();
+            })
+            .catch((err) => {
+                alert('error during delete request', err);
+            });
+    }
+
     // toggle between image and description when clicked
     const toggleDescription = () => {
         setToggle(!toggle);
@@ -41,7 +53,8 @@ function GalleryItem({id, path, description, likes, getGallery}) {
                 <p><img onClick={toggleDescription} src={path}></img></p>       
                 }
             </div>
-            <button onClick={() => likedImage(id)}>love it!</button> 
+            <button onClick={() => likedImage(id)}>love it!</button>
+            <button onClick={() => deleteImage(id)}>DELETE</button> 
             { checkIfLikes() }
         </div>
     )

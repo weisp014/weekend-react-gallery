@@ -35,4 +35,19 @@ router.get('/', (req, res) => {
         })
 }); // END GET Route
 
+// DELETE Route
+router.delete('/:id', (req, res) => {
+    const idToDelete = req.params.id;
+    const sqlText = `DELETE FROM "gallery" WHERE "id"=$1;`;
+    pool.query(sqlText, [idToDelete])
+        .then((result) => {
+            console.log('deleted item from DB with id:', idToDelete);
+            res.sendStatus(200)
+        })
+        .catch((err) => {
+            console.log(err);
+            res.sendStatus(500);
+        })
+}); // END DELETE Route
+
 module.exports = router;
