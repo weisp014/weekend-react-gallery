@@ -2,6 +2,14 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import axios from 'axios';
 import GalleryList from '../GalleryList/GalleryList';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+
+const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+  },
+});
 
 function App() {
   let [allImages, setAllImages] = useState([]);
@@ -27,12 +35,15 @@ function App() {
 
 
     return (
+      <ThemeProvider theme={darkTheme}>
+        <CssBaseline />
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
         <GalleryList allImages={allImages} getGallery={getGallery} />
       </div>
+      </ThemeProvider>
     );
 }
 

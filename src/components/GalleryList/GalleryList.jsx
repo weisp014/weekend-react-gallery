@@ -7,7 +7,7 @@ function GalleryList({allImages, getGallery}) {
 
     return(
         <div id="images">
-        <ImageList sx={{ width: 700, height: 500 }} cols={4} rowHeight={200}>
+        <ImageList sx={{ width: 600, height: 500 }} cols={3} rowHeight={300}>
             {allImages.map((image) => (
                 
                     <GalleryItem key={image.id}
