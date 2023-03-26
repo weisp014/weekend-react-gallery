@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Button from '@mui/material/Button';
+import DeleteIcon from '@mui/icons-material/Delete';
+import Tooltip from '@mui/material/Tooltip';
+import ImageListItem from '@mui/material/ImageListItem';
 
 function GalleryItem({id, path, description, likes, getGallery}) {
 
@@ -44,7 +48,7 @@ function GalleryItem({id, path, description, likes, getGallery}) {
     }
 
     return(
-        <div>
+        <ImageListItem>
             {/* Show description if toggle true */}
             <div>
                 {
@@ -53,10 +57,14 @@ function GalleryItem({id, path, description, likes, getGallery}) {
                 <p><img onClick={toggleDescription} src={path}></img></p>       
                 }
             </div>
-            <button onClick={() => likedImage(id)}>love it!</button>
-            <button onClick={() => deleteImage(id)}>DELETE</button> 
+            <div className='buttons'>
+            <Button variant='contained' onClick={() => likedImage(id)}>love it!</Button>
+            <Tooltip title="Delete">
+            <DeleteIcon fontSize='medium' variant="contained" color="error" onClick={() => deleteImage(id)}>DELETE</DeleteIcon>
+            </Tooltip>
+            </div>
             { checkIfLikes() }
-        </div>
+        </ImageListItem>
     )
 }
 

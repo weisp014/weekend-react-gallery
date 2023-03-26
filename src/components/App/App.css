@@ -13,13 +13,19 @@
   font-size: 1.5em;
 }
 
-.images {
+#images {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .description {
   width: 150px;
   height: 150px;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
