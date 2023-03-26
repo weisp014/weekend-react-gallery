@@ -1,10 +1,13 @@
 import GalleryItem from "../GalleryItem/GalleryItem";
+import ImageList from '@mui/material/ImageList';
+
 
 function GalleryList({allImages, getGallery}) {
 
 
     return(
-        <div className="images">
+        <div id="images">
+        <ImageList sx={{ width: 600, height: 500 }} cols={3} rowHeight={300}>
             {allImages.map((image) => (
                 
                     <GalleryItem key={image.id}
@@ -15,6 +18,7 @@ function GalleryList({allImages, getGallery}) {
                     getGallery={getGallery}
                     />
             ))}
+        </ImageList>
         </div>
     )
 }

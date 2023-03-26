@@ -11,4 +11,7 @@ VALUES ('images/image1.jpg', 'Photo of a goat taken at Glacier National Park.', 
 		('images/image2.jpg', 'The sound of music.', 0),
 		('images/image3.jpg', 'Mmm coffee.', 0),
 		('images/image4.jpg', 'That looks dangerous.', 0),
-		('images/image5.jpg', 'The streets are empty.', 0);
+		('images/image5.jpg', 'The streets are empty.', 0),
+		('images/image6.jpg', 'Lighthouse from afar.', 0),
+		('images/image7.jpg', 'Wine not.', 0),
+		('images/image8.jpg', 'Spring feeling.', 0);
