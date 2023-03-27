@@ -8,7 +8,7 @@ This application displays a list of images from a database. The user can scroll 
 
 ## Screen Shot
 
-[<img src="public/images/screenshot.jpg" width="500px"/>]
+<img src="public/images/screenshot.jpg" width="500px"/>
 
 ### Prerequisites
 
